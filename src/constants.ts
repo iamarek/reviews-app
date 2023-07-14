@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000"
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 export const PATHS = {
   PAGES: {
@@ -6,6 +6,6 @@ export const PATHS = {
     RESULTS: "/results",
   },
   API: {
-    REVIEWS: "/api/reviews1",
+    REVIEWS: "/api/reviews",
   },
 }
