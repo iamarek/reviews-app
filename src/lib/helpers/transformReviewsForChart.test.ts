@@ -8,18 +8,21 @@ describe("transformReviewsForChart", () => {
         rating: "5",
         email: "test@example.com",
         comment: "test",
+        date: new Date("2021-06-02").toISOString(),
       },
       {
         name: "Test User 2",
         rating: "4",
         email: "test2@example.com",
         comment: "test",
+        date: new Date("2021-06-02").toISOString(),
       },
       {
         name: "Test User 2",
         rating: "4",
         email: "test2@example.com",
         comment: "test",
+        date: new Date("2021-06-02").toISOString(),
       },
     ]
 

@@ -1,5 +1,6 @@
 "use client"
 
+import sortByDate from "@/lib/helpers/sortByDate"
 import { ReviewType } from "@/types"
 import {
   Dispatch,
@@ -28,10 +29,13 @@ type ActionType =
 
 const reducer = (state: StateType, action: ActionType) => {
   switch (action.type) {
-    case Types.ADD_REVIEW:
-      return [...state, action.payload]
+    case Types.ADD_REVIEW: {
+      const newState = [...state, action.payload]
+
+      return sortByDate(newState)
+    }
     case Types.ADD_REVIEWS:
-      return action.payload
+      return sortByDate(action.payload)
     default:
       return state
   }

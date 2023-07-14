@@ -26,19 +26,20 @@ const FeedbackForm = (): ReactElement => {
   const router = useRouter()
 
   // Submit form data to the API and redirect to the results page
-  const onSubmit: SubmitHandler<ReviewType> = async (data) => {
+  const onSubmit: SubmitHandler<ReviewType> = async (formData) => {
     try {
       const res = await fetch(`${BASE_URL}${PATHS.API.REVIEWS}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       })
 
       if (!res.ok) {
         throw new Error("Failed to submit data")
       }
+      const data = await res.json()
 
       addReview(data)
       router.push(PATHS.PAGES.RESULTS)

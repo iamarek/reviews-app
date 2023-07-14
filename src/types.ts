@@ -3,4 +3,5 @@ export type ReviewType = {
   email: string
   rating: string
   comment: string
+  date: string
 }
